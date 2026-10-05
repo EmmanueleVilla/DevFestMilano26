@@ -5,15 +5,13 @@
 -->
 <data-extraction-rules>
     <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> to control what is backed up.
-        <include .../>
-        <exclude .../>
-        -->
+        <!-- Excludes the favorites/session-cache DB and the session DataStore (uid/email) from
+             cloud backup, per the secure-storage-audit finding and constitution Principle II. -->
+        <exclude domain="database" path="devfestmilano26.db" />
+        <exclude domain="file" path="datastore/session.preferences_pb" />
     </cloud-backup>
-    <!--
     <device-transfer>
-        <include .../>
-        <exclude .../>
+        <exclude domain="database" path="devfestmilano26.db" />
+        <exclude domain="file" path="datastore/session.preferences_pb" />
     </device-transfer>
-    -->
 </data-extraction-rules>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Explicit, auditable guarantee that no cleartext (HTTP) traffic is ever permitted, for any
+  domain, per the network-security-check finding and constitution Principle II. Certificate
+  pinning is deliberately not used: the app's only endpoints are a public NASA API and
+  Google-operated Firebase services, both with managed certificate rotation that pinning would
+  complicate without a meaningful security benefit for this app's risk profile.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>

@@ -105,6 +105,20 @@ plugin), replacing the older string-route + `NavType` argument pattern. Using th
 **Alternatives considered**: String-based routes with manual argument parsing — rejected, it's the
 now-superseded pattern for this exact library version.
 
+**Addendum (post-Stitch-download)**: the actual Stitch screens (downloaded to
+`specs/001-apod-app/stitch-reference/`, after this research was first written) show a persistent
+bottom `NavigationBar` with four tabs — Today, Log/Detail, Favorites, Access — present identically
+on all four screens. This supersedes the "Login only at first run" assumption `design-brief.md`
+flagged as an open design note: Access (Login) is always one tab away, so no dedicated "sync your
+favorites" banner/entry point is needed on Favorites — the persistent tab already satisfies
+FR-015's reachability requirement. The Detail tab, opened with no specific date argument, shows
+today's entry by default; tapping a specific Favorites grid item pushes Detail with that item's
+date instead. The Login/Access screen's mockup also shows a "Hardware Key (FIDO2)" option
+(explicitly commented in its source as an "Archive Hardware Token Option") — this is out of scope
+for this feature (spec.md only requires email/password and Google) and is intentionally not
+implemented; only the mockup's primary email/password, Google, and "continue without an account"
+paths are built.
+
 ## Authentication: Firebase Auth (email/password + Google)
 
 **Decision**: Firebase Authentication for both the email/password flow and Google sign-in, with

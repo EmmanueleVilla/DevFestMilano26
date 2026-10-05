@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#111317;color:#e2e2e6;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#afceb4", "on-surface": "#e2e2e6", "outline-variant": "#524439", "on-surface-variant": "#d8c3b4", "on-error-container": "#ffdad6", "secondary-container": "#324d39", "tertiary": "#ffb4a7", "on-tertiary-fixed-variant": "#792f23", "surface-bright": "#37393d", "on-primary": "#4d2700", "surface-dim": "#111317", "on-secondary-fixed": "#052010", "surface": "#111317", "surface-container-high": "#282a2d", "on-tertiary": "#5b190f", "error": "#ffb4ab", "primary-fixed": "#ffdcc2", "secondary": "#afceb4", "surface-container": "#1e2023", "surface-variant": "#333538", "on-tertiary-fixed": "#3e0401", "on-secondary": "#1b3624", "inverse-primary": "#8c4f10", "on-secondary-fixed-variant": "#324d39", "on-background": "#e2e2e6", "surface-container-highest": "#333538", "primary": "#ffb77b", "on-tertiary-container": "#521209", "primary-container": "#c8803f", "surface-tint": "#ffb77b", "surface-container-low": "#1a1c1f", "on-secondary-container": "#9ebda3", "on-primary-fixed-variant": "#6d3a00", "outline": "#a08d80", "tertiary-fixed-dim": "#ffb4a7", "surface-container-lowest": "#0c0e11", "inverse-surface": "#e2e2e6", "error-container": "#93000a", "secondary-fixed": "#cbead0", "tertiary-container": "#d57666", "background": "#111317", "inverse-on-surface": "#2f3034", "tertiary-fixed": "#ffdad4", "on-primary-container": "#432100", "on-error": "#690005", "on-primary-fixed": "#2e1500", "primary-fixed-dim": "#ffb77b" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "gutter": "1rem", "margin": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-sm": "0.5rem" }, fontFamily: { "label-sm": ["JetBrains Mono"], "body-lg": ["Work Sans"], "label-md": ["JetBrains Mono"], "headline-sm": ["EB Garamond"], "headline-lg": ["EB Garamond"], "body-sm": ["Work Sans"], "headline-xl-mobile": ["EB Garamond"], "body-md": ["Work Sans"], "headline-xl": ["EB Garamond"], "label-lg": ["JetBrains Mono"] }, fontSize: { "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.6)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Observatory Logbook Astrolabe Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcVMvqX0AvqUPG7uQZC4UQwUrBhQLfYc2DKKWc4qFesnuh-OJHItUYZi9TshZBjhjioude7jWqsdqFQAauUtnwW7lsMCZiKqjnVaJkzcGhJwFwf1xyYHtPsPYCY-VGSRkw5HA1JTZZ2WI-x5-FtMLk8o3QQZpWthcm2aE-8kj0v71OQMfteB1aCcs6sWgoL03M7dvEUCRCFco4au3wj6YgVJvAa6zwJ87qVpxXQQ7Q4MiBs8cCkl4"/><div class="flex flex-col"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">OBSERVATORY LOGBOOK // APOD</span><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Log Detail</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex flex-col text-right"><span class="font-label-sm text-label-sm text-secondary uppercase">RA 19h 50m // DEC +08°52'</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">SYS // SCOTOPIC_V2</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-14 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Asymmetric Plate Recap Banner -->
+<section class="bg-surface-container-lowest p-margin">
+<div class="flex items-start gap-space-md">
+<div class="relative w-24 h-24 shrink-0 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="Deep space telescope astrophotography plate of NGC 1365 barred spiral galaxy in the Fornax constellation, luminous central bar with prominent dust lanes, electric cyan starburst knots, and warm amber infrared filamentary structures set against deep scotopic void space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDIF3x9yR5y5I2JAEiAXh-PdJW3PWkhQTot_oNZU9wmIMZoa69Ns5cuGHRZ3dUlNTA7HIakdKn8lCsmpvMDiJHw_FRacZfXNYAYNc5NuHQpBszg1xjHZJd3TtqlrZz1rsCqliurGLY_x-BBk3fqhVe4XVH2TK6t8YYHk6NFu3ND9Vmgf3JcsDB8FU3m5HsVSEokJKe7mgRhjlvmDQR9zxY-vO5RLBvoEaAy2Q5KwPuhCOfdFOeqR4"/>
+<div class="absolute bottom-0 inset-x-0 bg-surface-container-lowest/90 px-1 py-0.5 flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-primary tracking-widest">PL-1365</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">crop_free</span>
+</div>
+</div>
+<div class="flex flex-col justify-between h-24 py-0.5 min-w-0">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">CALIBRATED LOG</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface truncate">PLATE ID: NGC-1365-W1</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">EXPOSURE: 14.2h INTEGRATED</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">FILTER: F770W / F1130W</p>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<span class="font-label-sm text-label-sm text-primary uppercase">MIRI / NIRCam</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">// JWST-CYCLE-2</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Title & Ledger Index Header -->
+<section class="bg-surface px-margin pt-space-lg pb-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">
+        LOG ENTRY 2025.05.18 • APOD ARCHIVE VOL. 44
+      </span>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface font-normal tracking-tight">
+        The Great Barred Spiral in Fornax
+      </h1>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">
+          CATALOG: ESO 358-45 // FORNAX CLUSTER
+        </span>
+<span class="font-label-sm text-label-sm text-secondary uppercase">
+          z = 0.005457
+        </span>
+</div>
+</div>
+</section>
+<!-- Structural Division Rule -->
+<div class="h-[1px] w-full bg-outline-variant"></div>
+<!-- Narrative Reading Body (Sans-serif, archival reading tone) -->
+<article class="bg-surface px-margin py-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">[FIELD NOTES // OBSERVATIONAL SYNTHESIS]</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed text-justify">
+      Spanning over 200,000 light-years across the southern constellation Fornax, NGC 1365 is among the most prominent and topologically resolved barred spiral galaxies known in extragalactic astrophysics. The mid-infrared imaging channels isolate dense polycyclic aromatic hydrocarbon emission and cold cosmic dust veins, penetrating the obscuring gas veils that shroud the system in visible wavelengths. The prominent, elongated stellar bar acts as a massive gravitational conveyor belt, channeling vast reservoirs of molecular hydrogen inward toward the galactic core at supersonic inflow velocities.
+    </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed text-justify">
+      Along the leading edges of this rotating celestial bar, immense hydrodynamic shock fronts compress gas into radiant stellar nurseries. These dense starburst complexes, resolved here into discrete clumps of luminous super-star clusters, blaze with intense ultraviolet output that re-radiates warmly through the surrounding dust matrix. The sweeping spiral arms extend symmetrically outward from the bar tips, decorated by delicate filamentary spurs and inter-arm dust webs that trace the trailing density waves of the outer disk.
+    </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed text-justify">
+      At the deepest gravitational nexus sits a voracious Seyfert 1.5 active galactic nucleus powered by a rapidly spinning supermassive black hole. X-ray spectral observations corroborate that the event horizon is flanked by a relativistic accretion disk revolving near the physical speed limit of general relativity. The delicate interplay between this nuclear fountain of high-energy jets and the inexorable inflow of fuel along the primary stellar bar makes NGC 1365 an immaculate laboratory for investigating the co-evolution of galactic bars and supermassive black holes across cosmic epochs.
+    </p>
+<!-- Reading telemetry tag row -->
+<div class="flex flex-wrap gap-1.5 pt-space-sm">
+<span class="bg-surface-container px-2 py-1 font-label-sm text-label-sm text-on-surface-variant uppercase">BAR / THETA: 48.2°</span>
+<span class="bg-surface-container px-2 py-1 font-label-sm text-label-sm text-on-surface-variant uppercase">DISTANCE: 56.4 MLY</span>
+<span class="bg-surface-container px-2 py-1 font-label-sm text-label-sm text-secondary uppercase">STATUS: DUST-PENETRATED</span>
+</div>
+</article>
+<!-- Structural Division Rule -->
+<div class="h-[1px] w-full bg-outline-variant"></div>
+<!-- Metadata Strip -->
+<section class="bg-surface-container-low p-margin flex flex-col gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">ATTRIBUTION &amp; SENSOR REGISTRATION</span>
+<p class="font-label-sm text-label-sm text-on-surface uppercase leading-tight">
+        IMAGE CREDIT &amp; COPYRIGHT: NASA, ESA, CSA, Janice Lee (NOIRLab) / Processing: Alyssa Pagan (STScI)
+      </p>
+</div>
+<div class="h-[1px] w-full bg-outline-variant"></div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">ARCHIVAL PERMALINK</span>
+<div class="flex items-center justify-between bg-surface-container-lowest px-3 py-2.5">
+<span class="font-label-sm text-label-sm text-primary tracking-tight truncate mr-2 select-all" id="permalinkText">
+          apod.nasa.gov/apod/ap250518.html
+        </span>
+<button class="shrink-0 font-label-sm text-label-sm text-primary hover:text-on-surface transition-colors flex items-center gap-1 active:opacity-70" id="copyBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span id="copyLabel">[COPY URI]</span>
+</button>
+</div>
+</div>
+<!-- Ephemeris Auxiliary Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container p-2.5 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase">RIGHT ASCENSION</span>
+<span class="font-label-md text-label-md text-on-surface">03h 33m 36.4s</span>
+</div>
+<div class="bg-surface-container p-2.5 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase">DECLINATION</span>
+<span class="font-label-md text-label-md text-on-surface">-36° 08' 25"</span>
+</div>
+</div>
+</section>
+<!-- Structural Division Rule -->
+<div class="h-[1px] w-full bg-outline-variant"></div>
+<!-- Anchored Planar Action Deck -->
+<footer class="bg-surface-container-lowest p-margin flex flex-col gap-2 pb-6">
+<div class="grid grid-cols-1 gap-2">
+<!-- Primary Save/Star Action with Logged State micro-interaction -->
+<button class="w-full h-12 bg-primary text-on-primary flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-widest active:bg-primary-container transition-colors" id="favoriteDetailBtn" type="button">
+<span class="material-symbols-outlined text-[18px]" id="favoriteDetailIcon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span id="favoriteDetailText">[ ★ SAVED TO LOGBOOK ]</span>
+</button>
+<!-- Secondary Share Action with planar tone shift -->
+<button class="w-full h-12 bg-surface-container-high text-on-surface flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-widest hover:bg-surface-bright active:bg-surface-variant transition-colors" id="shareObservationBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">share</span>
+<span>[ SHARE OBSERVATION PLATE ]</span>
+</button>
+</div>
+<!-- Instrument Status Bar -->
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-outline uppercase">TELEMETRY // SYNCED VIA DSN</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase">● ARCHIVE RECORD LOCKED</span>
+</div>
+</footer>
+<!-- Script: Clipboard & Favorite Micro-Interactions -->
+<script>
+    (function initLogDetail() {
+      const copyBtn = document.getElementById('copyBtn');
+      const copyLabel = document.getElementById('copyLabel');
+      const favoriteBtn = document.getElementById('favoriteDetailBtn');
+      const favoriteIcon = document.getElementById('favoriteDetailIcon');
+      const favoriteText = document.getElementById('favoriteDetailText');
+
+      if (copyBtn && copyLabel) {
+        copyBtn.addEventListener('click', () => {
+          const permalink = document.getElementById('permalinkText')?.innerText?.trim() || 'apod.nasa.gov/apod/ap250518.html';
+          navigator.clipboard?.writeText(permalink).then(() => {
+            copyLabel.textContent = '[COPIED]';
+            copyBtn.classList.add('text-secondary');
+            setTimeout(() => {
+              copyLabel.textContent = '[COPY URI]';
+              copyBtn.classList.remove('text-secondary');
+            }, 2000);
+          }).catch(() => {
+            copyLabel.textContent = '[ERR: MANUAL SELECT]';
+          });
+        });
+      }
+
+      let isFavorited = true;
+      if (favoriteBtn && favoriteIcon && favoriteText) {
+        favoriteBtn.addEventListener('click', () => {
+          isFavorited = !isFavorited;
+          if (isFavorited) {
+            favoriteBtn.className = "w-full h-12 bg-primary text-on-primary flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-widest active:bg-primary-container transition-colors";
+            favoriteIcon.style.fontVariationSettings = "'FILL' 1";
+            favoriteText.textContent = "[ ★ SAVED TO LOGBOOK ]";
+          } else {
+            favoriteBtn.className = "w-full h-12 bg-surface-container text-on-surface-variant flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-widest active:bg-surface-bright transition-colors";
+            favoriteIcon.style.fontVariationSettings = "'FILL' 0";
+            favoriteText.textContent = "[ + LOG ENTRY TO FAVORITES ]";
+          }
+        });
+      }
+
+      const shareBtn = document.getElementById('shareObservationBtn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          if (navigator.share) {
+            navigator.share({
+              title: 'APOD: The Great Barred Spiral in Fornax (NGC 1365)',
+              text: 'Observation plate logged 2025.05.18 - APOD Archive Vol. 44',
+              url: 'https://apod.nasa.gov/apod/ap250518.html'
+            }).catch(() => {});
+          } else {
+            const originalText = shareBtn.innerHTML;
+            shareBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-secondary">check</span><span class="text-secondary">[ LINK COPIED TO BUFFER ]</span>';
+            setTimeout(() => {
+              shareBtn.innerHTML = originalText;
+            }, 2200);
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.7)]" data-active-classes="text-primary border-t-2 border-primary bg-surface-container-low"><div class="h-14 grid grid-cols-4"><a class="flex flex-col items-center justify-center h-full px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="today" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">wb_twilight</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[TODAY]</span></a><a aria-current="page" class="flex flex-col items-center justify-center h-full px-space-xs transition-colors text-primary border-t-2 border-primary bg-surface-container-low" data-path="log-detail" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">menu_book</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[LOG / DETAIL]</span></a><a class="flex flex-col items-center justify-center h-full px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="favorites" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">star_rate</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[FAVORITES]</span></a><a class="flex flex-col items-center justify-center h-full px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="account-access" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">tune</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[ACCESS]</span></a></div></nav></body></html>

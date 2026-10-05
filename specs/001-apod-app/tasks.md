@@ -38,21 +38,21 @@ unit tests mirror the same package layout under `app/src/test/java/...`; instrum
 
 **Purpose**: Project initialization and dependency wiring
 
-- [ ] T001 Add Gradle version catalog entries to `gradle/libs.versions.toml` for Hilt, Room + KSP,
+- [X] T001 Add Gradle version catalog entries to `gradle/libs.versions.toml` for Hilt, Room + KSP,
       AndroidX Preferences DataStore, Navigation Compose, `kotlinx-serialization-json`, Retrofit +
       `converter-kotlinx-serialization`, OkHttp logging interceptor, Coil 3 Compose, the Firebase
       BoM (`firebase-auth`, `firebase-firestore`), and Credential Manager (`androidx.credentials`,
       `googleid`)
-- [ ] T002 Apply the KSP, Hilt Android, Kotlin serialization, and Google Services Gradle plugins in
+- [X] T002 Apply the KSP, Hilt Android, Kotlin serialization, and Google Services Gradle plugins in
       `build.gradle.kts` (root) and `app/build.gradle.kts`, and wire in the dependencies added in
       T001
-- [ ] T003 [P] Add `NASA_APOD_API_KEY` to `local.properties` (gitignored) and expose it via a
+- [X] T003 [P] Add `NASA_APOD_API_KEY` to `local.properties` (gitignored) and expose it via a
       generated `BuildConfig` field in `app/build.gradle.kts` — per research.md "Secrets handling"
       and constitution Principle II, this key MUST NOT appear as a literal in committed source
-- [ ] T004 [P] Add `google-services.json` to `app/` from the Firebase console project, with
+- [X] T004 [P] Add `google-services.json` to `app/` from the Firebase console project, with
       Email/Password and Google sign-in providers enabled and Firestore created in Native mode
       (quickstart.md Prerequisites)
-- [ ] T005 Create the empty package skeleton per `plan.md` Project Structure:
+- [X] T005 Create the empty package skeleton per `plan.md` Project Structure:
       `core/di`, `core/navigation`, `core/ui/theme`, `apod/data/{remote,local,repository}`,
       `apod/domain/{model,repository,usecase}`, `apod/presentation/{today,detail,favorites,login}`
 
@@ -65,82 +65,84 @@ every screen depends on the theme, every story depends on the domain models/repo
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Implement the Hilt Application class (`@HiltAndroidApp`) and register it in
+- [X] T006 Implement the Hilt Application class (`@HiltAndroidApp`) and register it in
       `AndroidManifest.xml`
-- [ ] T007 Convert `MainActivity` to `@AndroidEntryPoint` and have it host an empty `NavHost`
-- [ ] T008 [P] Define the Observatory Logbook color tokens — surface `#0B0D10`, surface raised
+- [X] T007 Convert `MainActivity` to `@AndroidEntryPoint` and have it host an empty `NavHost`
+- [X] T008 [P] Define the Observatory Logbook color tokens — surface `#0B0D10`, surface raised
       `#14171B`, primary copper `#B87333` with pressed state `#D98E54`, on-surface `#F2EFEA`,
       muted on-surface `#9C958B`, hairline `#2A2D31`, synced `#6E8B74`, error/rust `#9E4B3D` (per
       research.md "Design tokens", sourced from the Stitch design system) — in
       `core/ui/theme/Color.kt`
-- [ ] T009 [P] Define the Observatory Logbook typography tokens — EB Garamond for display/titles,
+- [X] T009 [P] Define the Observatory Logbook typography tokens — EB Garamond for display/titles,
       Work Sans for body text, JetBrains Mono for labels/metadata (research.md "Design tokens") —
       in `core/ui/theme/Type.kt`, declaring the three font families as theme font resources
-- [ ] T010 Wire T008's colors and T009's typography into `MaterialTheme.colorScheme`/
+- [X] T010 Wire T008's colors and T009's typography into `MaterialTheme.colorScheme`/
       `MaterialTheme.typography` in `core/ui/theme/Theme.kt` — per constitution Principle IV, every
       screen built in later phases MUST consume only these theme roles, never raw hex colors or
       ad-hoc dimensions (depends on: T008, T009)
-- [ ] T011 [P] Define domain model `AstronomyPicture` (identity is `date`; "`hdUrl` is only ever
+- [X] T011 [P] Define domain model `AstronomyPicture` (identity is `date`; "`hdUrl` is only ever
       non-null when `mediaType == IMAGE`" per data-model.md) in
       `apod/domain/model/AstronomyPicture.kt`
-- [ ] T012 [P] Define domain model `Favorite` and `SyncStatus` enum (`LOCAL_ONLY`, `SYNCED`),
+- [X] T012 [P] Define domain model `Favorite` and `SyncStatus` enum (`LOCAL_ONLY`, `SYNCED`),
       enforcing "a row with `syncStatus == SYNCED` always has a non-null `ownerUid`; a row with
       `syncStatus == LOCAL_ONLY` always has a null `ownerUid`" (data-model.md) in
       `apod/domain/model/Favorite.kt`
-- [ ] T013 [P] Define domain model `UserSession`, enforcing "`uid`/`email` are always null together
+- [X] T013 [P] Define domain model `UserSession`, enforcing "`uid`/`email` are always null together
       with `isSignedIn == false`, and both non-null when `isSignedIn == true`" (data-model.md) in
       `apod/domain/model/UserSession.kt`
-- [ ] T014 Define repository interfaces `TodayPictureRepository`, `FavoritesRepository`, and
+- [X] T014 Define repository interfaces `TodayPictureRepository`, `FavoritesRepository`, and
       `SessionRepository` exactly per `contracts/favorites-repository.md` in
       `apod/domain/repository/` — no Room/Firestore/Retrofit/Firebase imports anywhere in this
       package, per constitution Principle I (depends on: T011, T012, T013)
-- [ ] T015 [P] Implement the Room entity `FavoriteEntity` + `FavoriteDao`, with an
+- [X] T015 [P] Implement the Room entity `FavoriteEntity` + `FavoriteDao`, with an
       insert-or-replace-by-`date` write and a delete-by-`date` write — "Primary key `date` means
       saving an already-favorited date again is an update, not a duplicate insert" (data-model.md)
       — in `apod/data/local/FavoriteEntity.kt` and `apod/data/local/FavoriteDao.kt`
-- [ ] T016 [P] Implement the Room entity `CachedTodayEntity` + `CachedTodayDao` as a single-row
+- [X] T016 [P] Implement the Room entity `CachedTodayEntity` + `CachedTodayDao` as a single-row
       upsert — "Always overwritten — only the most recent successful fetch is kept"
       (data-model.md) — in `apod/data/local/CachedTodayEntity.kt` and
       `apod/data/local/CachedTodayDao.kt`
-- [ ] T017 Implement `AppDatabase` (Room), registering both entities and both DAOs, in
+- [X] T017 Implement `AppDatabase` (Room), registering both entities and both DAOs, in
       `apod/data/local/AppDatabase.kt` (depends on: T015, T016)
-- [ ] T018 [P] Implement a Preferences DataStore-backed session source (`isSignedIn`, `uid`,
+- [X] T018 [P] Implement a Preferences DataStore-backed session source (`isSignedIn`, `uid`,
       `email` — never tokens, per research.md "Secrets handling") in
       `apod/data/local/SessionPreferences.kt`
-- [ ] T019 [P] Implement `ApodApiService` (Retrofit) + `ApodDto` + a DTO→domain mapper exactly per
+- [X] T019 [P] Implement `ApodApiService` (Retrofit) + `ApodDto` + a DTO→domain mapper exactly per
       `contracts/apod-api.md` (including the `media_type` → `IMAGE`/`VIDEO` mapping) in
       `apod/data/remote/ApodApiService.kt` and `apod/data/remote/ApodDto.kt`
-- [ ] T020 [P] Implement `FirestoreFavoritesSource` — reads/writes/deletes against
+- [X] T020 [P] Implement `FirestoreFavoritesSource` — reads/writes/deletes against
       `users/{uid}/favorites/{date}` exactly per `contracts/firestore-schema.md` — in
       `apod/data/remote/FirestoreFavoritesSource.kt`
-- [ ] T021 Implement `TodayPictureRepositoryImpl` (fetches via T019; on a successful fetch,
+- [X] T021 Implement `TodayPictureRepositoryImpl` (fetches via T019; on a successful fetch,
       overwrites the T016 cache) in `apod/data/repository/TodayPictureRepositoryImpl.kt`
       (depends on: T017, T019)
-- [ ] T022 Implement `FavoritesRepositoryImpl` — Room (T015) is always the source of truth the UI
+- [X] T022 Implement `FavoritesRepositoryImpl` — Room (T015) is always the source of truth the UI
       reads from; `saveFavorite` is insert-or-replace plus a conditional Firestore (T020) mirror
       write when `syncStatus == SYNCED`; `removeFavorite` deletes locally plus a conditional
       Firestore delete; `migrateLocalFavoritesToAccount` re-labels every `LOCAL_ONLY` row to
       `SYNCED` with the given `uid` and writes it to Firestore (FR-015) — in
       `apod/data/repository/FavoritesRepositoryImpl.kt` (depends on: T015, T020)
-- [ ] T023 Implement `SessionRepositoryImpl` — Firebase Auth email/password sign-in, Google
+- [X] T023 Implement `SessionRepositoryImpl` — Firebase Auth email/password sign-in, Google
       sign-in via Credential Manager (`GetGoogleIdOption` → `GoogleAuthProvider.getCredential` →
       `FirebaseAuth.signInWithCredential`; re-verify the exact current Credential Manager API via
       Context7 before writing this, per research.md's open flag), `continueWithoutAccount` (no
       Firebase call), and `signOut`, all backed by T018's DataStore cache — in
       `apod/data/repository/SessionRepositoryImpl.kt` (depends on: T018)
-- [ ] T024 [P] Hilt DI modules — `NetworkModule` (OkHttp + Retrofit), `DatabaseModule` (Room),
+- [X] T024 [P] Hilt DI modules — `NetworkModule` (OkHttp + Retrofit), `DatabaseModule` (Room),
       `DataStoreModule`, `FirebaseModule` (`FirebaseAuth`/`FirebaseFirestore` instances), and
       `RepositoryModule` (binding T014's interfaces to T021/T022/T023's implementations) — in
       `core/di/` (depends on: T014, T021, T022, T023)
-- [ ] T025 Define type-safe navigation routes (`Today`, `Detail(date: String)`, `Favorites`,
-      `Login`, all `@Serializable` per research.md "Navigation") and the `NavHost` skeleton in
-      `core/navigation/`, choosing the start destination by whether the user has already passed
-      the Login screen once (a DataStore flag) (depends on: T007, T014)
-- [ ] T026 [P] Unit test `FavoritesRepositoryImpl` against an in-memory Room database and fakes for
+- [X] T025 Define type-safe navigation routes (`Today`, `Detail(date: String? = null)`,
+      `Favorites`, `Login`, all `@Serializable` per research.md "Navigation") and a `Scaffold` +
+      persistent bottom `NavigationBar` with 4 tabs — Today, Log/Detail, Favorites, Access — per
+      the actual Stitch screens (research.md "Navigation" addendum); `Today` is the default start
+      destination; the Log/Detail tab with no `date` shows today's entry — in `core/navigation/`
+      (depends on: T007, T014)
+- [X] T026 [P] Unit test `FavoritesRepositoryImpl` against an in-memory Room database and fakes for
       Firestore/session, covering the save/remove toggle and the FR-015 migration rule, in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/data/repository/FavoritesRepositoryImplTest.kt`
       (depends on: T022)
-- [ ] T027 [P] Unit test `TodayPictureRepositoryImpl` and `SessionRepositoryImpl` against fakes in
+- [X] T027 [P] Unit test `TodayPictureRepositoryImpl` and `SessionRepositoryImpl` against fakes in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/data/repository/` (depends on: T021, T023)
 
 **Checkpoint**: Foundation ready — user story implementation can now begin
@@ -158,30 +160,30 @@ tapping the favorite mark persists across an app restart — no other screen is 
 
 ### Implementation for User Story 1
 
-- [ ] T028 [P] [US1] Implement `GetTodayPictureUseCase` — fetch via `TodayPictureRepository`; on
+- [X] T028 [P] [US1] Implement `GetTodayPictureUseCase` — fetch via `TodayPictureRepository`; on
       failure, fall back to the cached entry; surface the Error state only when neither a fresh
       fetch nor a cache is available — in `apod/domain/usecase/GetTodayPictureUseCase.kt`
-- [ ] T029 [P] [US1] Implement `ObserveFavoriteStatusUseCase` (wraps
+- [X] T029 [P] [US1] Implement `ObserveFavoriteStatusUseCase` (wraps
       `FavoritesRepository.observeFavoriteStatus(date)`) in
       `apod/domain/usecase/ObserveFavoriteStatusUseCase.kt`
-- [ ] T030 [P] [US1] Implement `ToggleFavoriteUseCase` (save when not yet favorited, remove when
+- [X] T030 [P] [US1] Implement `ToggleFavoriteUseCase` (save when not yet favorited, remove when
       already favorited — the toggle behavior from `contracts/favorites-repository.md`) in
       `apod/domain/usecase/ToggleFavoriteUseCase.kt`
-- [ ] T031 [US1] Unit test `GetTodayPictureUseCase`, `ObserveFavoriteStatusUseCase`, and
+- [X] T031 [US1] Unit test `GetTodayPictureUseCase`, `ObserveFavoriteStatusUseCase`, and
       `ToggleFavoriteUseCase` against fake repositories in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/domain/usecase/` (depends on: T028, T029, T030)
-- [ ] T032 [US1] Define `TodayState` (`Loading`/`Content`/`Error`, with `Content` holding the
+- [X] T032 [US1] Define `TodayState` (`Loading`/`Content`/`Error`, with `Content` holding the
       picture, its favorite status, and an expanded/collapsed explanation flag) and `TodayIntent`
       (`Expand`, `ToggleFavorite`, `Retry`, `OpenDetail`) in
       `apod/presentation/today/TodayContract.kt`
-- [ ] T033 [US1] Implement `TodayViewModel` (`@HiltViewModel`), combining T028 and T029 into
+- [X] T033 [US1] Implement `TodayViewModel` (`@HiltViewModel`), combining T028 and T029 into
       `TodayState` and handling every `TodayIntent` from T032, in
       `apod/presentation/today/TodayViewModel.kt` (depends on: T028, T029, T030, T032)
-- [ ] T034 [US1] Unit test `TodayViewModel`'s state transitions (loading → content, expand toggle,
+- [X] T034 [US1] Unit test `TodayViewModel`'s state transitions (loading → content, expand toggle,
       favorite toggle, error → retry) in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/presentation/today/TodayViewModelTest.kt`
       (depends on: T033)
-- [ ] T035 [US1] Implement `TodayScreen` (full-width `AsyncImage` with the video badge overlay,
+- [X] T035 [US1] Implement `TodayScreen` (full-width `AsyncImage` with the video badge overlay,
       title/date/explanation preview + expand, the favorite mark, and the design-brief's ink-line
       loading motif and rust error frame), wired as the `NavHost`'s post-login start destination,
       in `apod/presentation/today/TodayScreen.kt` (depends on: T025, T033)
@@ -201,25 +203,25 @@ action all work, independent of the Favorites or Login screens.
 
 ### Implementation for User Story 2
 
-- [ ] T036 [US2] Implement `ObserveCachedTodayPictureUseCase`, resolving the full
+- [X] T036 [US2] Implement `ObserveCachedTodayPictureUseCase`, resolving the full
       `AstronomyPicture` for a given `date` from T021's cache, and extend the Detail navigation
       route to carry that `date`, in `apod/domain/usecase/ObserveCachedTodayPictureUseCase.kt`
       (depends on: T021, T025)
-- [ ] T037 [US2] Unit test `ObserveCachedTodayPictureUseCase` in
+- [X] T037 [US2] Unit test `ObserveCachedTodayPictureUseCase` in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/domain/usecase/ObserveCachedTodayPictureUseCaseTest.kt`
       (depends on: T036)
-- [ ] T038 [US2] Define `DetailState`/`DetailIntent`/`DetailEffect` (`Loading`/`Content`/`Error`;
+- [X] T038 [US2] Define `DetailState`/`DetailIntent`/`DetailEffect` (`Loading`/`Content`/`Error`;
       `ToggleSave`, `Share`, `OpenPermalink`; `OpenShareSheet`, `OpenBrowser`) in
       `apod/presentation/detail/DetailContract.kt`
-- [ ] T039 [US2] Implement `DetailViewModel`, reusing US1's `ObserveFavoriteStatusUseCase` (T029)
+- [X] T039 [US2] Implement `DetailViewModel`, reusing US1's `ObserveFavoriteStatusUseCase` (T029)
       and `ToggleFavoriteUseCase` (T030) plus T036, showing the credit line only when `copyright`
       is present (data-model.md), in `apod/presentation/detail/DetailViewModel.kt`
       (depends on: T029, T030, T036, T038)
-- [ ] T040 [US2] Unit test `DetailViewModel` (credit shown only when present, save/remove toggle,
+- [X] T040 [US2] Unit test `DetailViewModel` (credit shown only when present, save/remove toggle,
       share effect emission) in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/presentation/detail/DetailViewModelTest.kt`
       (depends on: T039)
-- [ ] T041 [US2] Implement `DetailScreen` (full explanation, conditional credit, a permalink that
+- [X] T041 [US2] Implement `DetailScreen` (full explanation, conditional credit, a permalink that
       opens the browser, a save control sharing Today's visual contract, share via the Android
       share intent), and wire Today's image-tap/"read more" navigation into it, in
       `apod/presentation/detail/DetailScreen.kt` (depends on: T035, T039)
@@ -238,22 +240,22 @@ the zero-favorites empty state, and the local-only/synced label per item.
 
 ### Implementation for User Story 3
 
-- [ ] T042 [P] [US3] Implement `ObserveFavoritesUseCase` (wraps
+- [X] T042 [P] [US3] Implement `ObserveFavoritesUseCase` (wraps
       `FavoritesRepository.observeFavorites()`) in `apod/domain/usecase/ObserveFavoritesUseCase.kt`
-- [ ] T043 [US3] Unit test `ObserveFavoritesUseCase` (empty list, populated list, local-only vs.
+- [X] T043 [US3] Unit test `ObserveFavoritesUseCase` (empty list, populated list, local-only vs.
       synced entries) in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/domain/usecase/ObserveFavoritesUseCaseTest.kt`
       (depends on: T042)
-- [ ] T044 [US3] Define `FavoritesState` (`Loading`/`Empty`/`Content`/`Error`) and `FavoritesIntent`
+- [X] T044 [US3] Define `FavoritesState` (`Loading`/`Empty`/`Content`/`Error`) and `FavoritesIntent`
       (`OpenFavorite(date)`, `Retry`) in `apod/presentation/favorites/FavoritesContract.kt`
-- [ ] T045 [US3] Implement `FavoritesViewModel`, mapping T042's list to
+- [X] T045 [US3] Implement `FavoritesViewModel`, mapping T042's list to
       `Empty`/`Content`/`Error`, in `apod/presentation/favorites/FavoritesViewModel.kt`
       (depends on: T042, T044)
-- [ ] T046 [US3] Unit test `FavoritesViewModel` (empty-state mapping, content mapping, local/synced
+- [X] T046 [US3] Unit test `FavoritesViewModel` (empty-state mapping, content mapping, local/synced
       label mapping) in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/presentation/favorites/FavoritesViewModelTest.kt`
       (depends on: T045)
-- [ ] T047 [US3] Implement `FavoritesScreen` (the staggered asymmetric grid from design-brief.md,
+- [X] T047 [US3] Implement `FavoritesScreen` (the staggered asymmetric grid from design-brief.md,
       thumbnail/title/date, the LOCAL/SYNCED tag, the empty-state frame), wired into the `NavHost`
       with an entry point reachable from Today/Detail, in
       `apod/presentation/favorites/FavoritesScreen.kt` (depends on: T025, T041, T045)
@@ -273,34 +275,35 @@ an account" and confirm favorites saved afterward stay "local only".
 
 ### Implementation for User Story 4
 
-- [ ] T048 [P] [US4] Implement `SyncFavoritesOnLoginUseCase` (wraps
+- [X] T048 [P] [US4] Implement `SyncFavoritesOnLoginUseCase` (wraps
       `FavoritesRepository.migrateLocalFavoritesToAccount`, invoked right after a successful
       sign-in per FR-015) in `apod/domain/usecase/SyncFavoritesOnLoginUseCase.kt`
-- [ ] T049 [US4] Unit test `SyncFavoritesOnLoginUseCase` (every `LOCAL_ONLY` row becomes `SYNCED`
+- [X] T049 [US4] Unit test `SyncFavoritesOnLoginUseCase` (every `LOCAL_ONLY` row becomes `SYNCED`
       with the signed-in `uid`) in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/domain/usecase/SyncFavoritesOnLoginUseCaseTest.kt`
       (depends on: T048)
-- [ ] T050 [US4] Define `LoginState` (`Default`/`SigningIn`/`Error`) and `LoginIntent`
+- [X] T050 [US4] Define `LoginState` (`Default`/`SigningIn`/`Error`) and `LoginIntent`
       (`SubmitEmailPassword`, `SignInWithGoogle`, `ContinueWithoutAccount`) in
       `apod/presentation/login/LoginContract.kt`
-- [ ] T051 [US4] Implement `LoginViewModel`, wrapping T023's sign-in methods and invoking T048 on
+- [X] T051 [US4] Implement `LoginViewModel`, wrapping T023's sign-in methods and invoking T048 on
       success, in `apod/presentation/login/LoginViewModel.kt` (depends on: T023, T048, T050)
-- [ ] T052 [US4] Unit test `LoginViewModel` (invalid credentials → Error, successful sign-in →
+- [X] T052 [US4] Unit test `LoginViewModel` (invalid credentials → Error, successful sign-in →
       migration invoked, continue-without-account → no Firebase call) in
       `app/src/test/java/com/shadowings/devfestmilano26/apod/presentation/login/LoginViewModelTest.kt`
       (depends on: T051)
-- [ ] T053 [US4] Implement `LoginScreen` (email/password fields, a Google sign-in button via
+- [X] T053 [US4] Implement `LoginScreen` (email/password fields, a Google sign-in button via
       Credential Manager, "continue without an account", per design-brief.md "Login"), wired as
       the `NavHost`'s first-run start destination, in `apod/presentation/login/LoginScreen.kt`
       (depends on: T025, T051)
-- [ ] T054 [US4] Register/unregister a Firestore snapshot listener on `users/{uid}/favorites`
+- [X] T054 [US4] Register/unregister a Firestore snapshot listener on `users/{uid}/favorites`
       while signed in, applying remote adds/updates/deletes into Room (research.md "Sync"
       remote→local direction) in `apod/data/repository/FavoritesRepositoryImpl.kt`
       (depends on: T022, T023)
-- [ ] T055 [US4] Add a "sync your favorites" entry point on `FavoritesScreen`, shown only when
-      signed out with at least one `LOCAL_ONLY` favorite, navigating to Login — so FR-015's
-      migration is reachable after first run, not only at first launch — in
-      `apod/presentation/favorites/FavoritesScreen.kt` (depends on: T047, T053)
+- [X] T055 [US4] Wire the Favorites screen's "Sync Now" action (visible in the Stitch mockup) to
+      re-trigger the Firestore sync pass from T054 on demand — FR-015's login-reachability concern
+      is already satisfied by the persistent Access tab from T025, so no separate entry point is
+      needed — in `apod/presentation/favorites/FavoritesScreen.kt` and
+      `FavoritesViewModel.kt` (depends on: T047, T054)
 
 **Checkpoint**: All four user stories are independently functional
 
@@ -310,16 +313,16 @@ an account" and confirm favorites saved afterward stay "local only".
 
 **Purpose**: Validation and hardening that spans every user story
 
-- [ ] T056 [P] Room DAO instrumented tests (`FavoriteDao`, `CachedTodayDao`) in
+- [X] T056 [P] Room DAO instrumented tests (`FavoriteDao`, `CachedTodayDao`) in
       `app/src/androidTest/java/com/shadowings/devfestmilano26/apod/data/local/`
-- [ ] T057 [P] Compose UI instrumented smoke tests for Today, Detail, Favorites, and Login in
+- [X] T057 [P] Compose UI instrumented smoke tests for Today, Detail, Favorites, and Login in
       `app/src/androidTest/java/com/shadowings/devfestmilano26/apod/presentation/*/`
-- [ ] T058 Run the `auth-assessment`, `secure-storage-audit`, and `network-security-check` skills
+- [X] T058 Run the `auth-assessment`, `secure-storage-audit`, and `network-security-check` skills
       against the built app (research.md "Security review skills"; constitution Principle II) and
       remediate any findings
-- [ ] T059 Execute every scenario in `quickstart.md` end-to-end on a device/emulator and record the
+- [X] T059 Execute every scenario in `quickstart.md` end-to-end on a device/emulator and record the
       results
-- [ ] T060 Run `./gradlew build` (full build + unit tests) as the final constitution Principle III
+- [X] T060 Run `./gradlew build` (full build + unit tests) as the final constitution Principle III
       completion gate
 
 ---

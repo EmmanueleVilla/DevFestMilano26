@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+.kotlin
+
+# Firebase config is per-environment (real project vs. this repo's placeholder) -- see
+# specs/001-apod-app/quickstart.md Prerequisites. Never commit a real one.
+app/google-services.json

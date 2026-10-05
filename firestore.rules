@@ -1,0 +1,17 @@
+rules_version = '2';
+
+// Enforces contracts/firestore-schema.md server-side: a request may only read or write
+// users/{uid}/favorites/** when authenticated as that same uid (auth-assessment finding --
+// client-side uid scoping in SessionRepositoryImpl/FavoritesRepositoryImpl is not itself a
+// security boundary without this). Deploy with `firebase deploy --only firestore:rules` once
+// app/google-services.json points at a real Firebase project.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/favorites/{date} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

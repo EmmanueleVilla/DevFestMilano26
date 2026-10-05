@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#111317;color:#e2e2e6;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#afceb4", "on-surface": "#e2e2e6", "outline-variant": "#524439", "on-surface-variant": "#d8c3b4", "on-error-container": "#ffdad6", "secondary-container": "#324d39", "tertiary": "#ffb4a7", "on-tertiary-fixed-variant": "#792f23", "surface-bright": "#37393d", "on-primary": "#4d2700", "surface-dim": "#111317", "on-secondary-fixed": "#052010", "surface": "#111317", "surface-container-high": "#282a2d", "on-tertiary": "#5b190f", "error": "#ffb4ab", "primary-fixed": "#ffdcc2", "secondary": "#afceb4", "surface-container": "#1e2023", "surface-variant": "#333538", "on-tertiary-fixed": "#3e0401", "on-secondary": "#1b3624", "inverse-primary": "#8c4f10", "on-secondary-fixed-variant": "#324d39", "on-background": "#e2e2e6", "surface-container-highest": "#333538", "primary": "#ffb77b", "on-tertiary-container": "#521209", "primary-container": "#c8803f", "surface-tint": "#ffb77b", "surface-container-low": "#1a1c1f", "on-secondary-container": "#9ebda3", "on-primary-fixed-variant": "#6d3a00", "outline": "#a08d80", "tertiary-fixed-dim": "#ffb4a7", "surface-container-lowest": "#0c0e11", "inverse-surface": "#e2e2e6", "error-container": "#93000a", "secondary-fixed": "#cbead0", "tertiary-container": "#d57666", "background": "#111317", "inverse-on-surface": "#2f3034", "tertiary-fixed": "#ffdad4", "on-primary-container": "#432100", "on-error": "#690005", "on-primary-fixed": "#2e1500", "primary-fixed-dim": "#ffb77b" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "gutter": "1rem", "margin": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-sm": "0.5rem" }, fontFamily: { "label-sm": ["JetBrains Mono"], "body-lg": ["Work Sans"], "label-md": ["JetBrains Mono"], "headline-sm": ["EB Garamond"], "headline-lg": ["EB Garamond"], "body-sm": ["Work Sans"], "headline-xl-mobile": ["EB Garamond"], "body-md": ["Work Sans"], "headline-xl": ["EB Garamond"], "label-lg": ["JetBrains Mono"] }, fontSize: { "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.6)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Observatory Logbook Astrolabe Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDucRIVeZQTk4UxHfPHjk2Ba9SR_n4kVtFcOMGmN6UiUMAlRCl7tnDtZ-QV9vs6VVd_dZIzPyt_UiaxkaXS_167igkN5meyhgIYeebS15brlpV7fgppGyldvkceBSrXeoRCAqINXCsd77RmXzxJZ_sNQl-19K5rMEg-xe8eqMwg5PzBCU2uZm2izv5LCDdvKRTclab6HptsIT_FeucDhTnFO6J4MGK76ClR2Frwgnh31r3tSisC-rM"/><div class="flex flex-col"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">OBSERVATORY LOGBOOK // APOD</span><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Today</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex flex-col text-right"><span class="font-label-sm text-label-sm text-secondary uppercase">RA 19h 50m // DEC +08°52'</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">SYS // SCOTOPIC_V2</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-14 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Astronomical Media Plate -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover select-none" data-alt="An ultra-deep field astronomical photograph of NGC 1365, the Great Barred Spiral Galaxy in the Fornax cluster. Prominent luminous dust lanes glow in deep copper amber, surrounded by millions of cold distant pinprick stars on pitch black space. High resolution NIRCam infrared style, archival observatory plate aesthetic, sharp stellar diffraction spikes." id="astro-plate-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfON_JPhih7gWRxPaZb9pVJVeTJHCHYYjbqbHIUQPSJQTHXepVkxtMLw_2Wwzq0PNBdCo6v4Qw1bHwCpb4y_d1FyR81pHsWb71I-Vc5qOsy9xFS6GXjRPHqb7ZceJf7DdPdhZ3n87ek5y2YixduEN5xy2fUJh6Nc0lVIHUG829Cjst496VKXZP-dM-15jNY6c9MFNHqAIxi6D95ldhgWkVI3gl0Xm-V-T0Rav8meBShJ8tQMnIjNo"/>
+<!-- Reticle crosshair HUD overlay -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-40">
+<div class="w-16 h-16 border border-primary/40 rounded-full flex items-center justify-center">
+<span class="w-1.5 h-1.5 bg-primary/70 rounded-full"></span>
+</div>
+<div class="absolute w-28 h-px bg-outline-variant/40"></div>
+<div class="absolute h-28 w-px bg-outline-variant/40"></div>
+</div>
+<!-- Top Left Sensor Telemetry Tag -->
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2 py-1 flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">SENSOR: NIRCam-F444W</span>
+</div>
+<!-- Anchored Edge Scrim Strip -->
+<div class="absolute bottom-0 inset-x-0 bg-surface-container-lowest/95 px-margin py-2.5 flex items-center justify-between border-t border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">RAW EXPOSURE // 8K NIRCam</span>
+<span class="text-outline-variant font-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">PLATE #0492-B</span>
+</div>
+<!-- Star / Favorite Archival Ledger Button -->
+<button class="flex items-center gap-1.5 px-2 py-1 bg-surface-container-low border border-outline-variant active:bg-surface-container transition-colors group" id="fav-btn" onclick="toggleFavorite()" type="button">
+<span class="material-symbols-outlined text-primary text-[15px] transition-transform duration-200 group-hover:scale-110" id="fav-icon">star_outline</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest" id="fav-label">FAV // 01</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Calibration Bar -->
+<div class="w-full bg-surface-container-low px-margin py-1.5 flex items-center justify-between border-b border-outline-variant/40">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">EXP: 1840.4s</span>
+<span class="text-outline-variant text-[10px]">■</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">AIRMASS: 1.08</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest">[ ARCHIVE SECURE ]</span>
+</div>
+</div>
+<!-- Primary Journal Body (Asymmetric Left Align) -->
+<div class="flex flex-col px-margin pt-4 pb-6 space-y-4">
+<!-- Registration Timestamp -->
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase">
+        REC. 2025-05-18 // 04:12 UTC // UTC+00:00
+      </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5 py-0.5">
+        CAT: NGC 1365
+      </span>
+</div>
+<!-- Literary Display Title -->
+<div class="space-y-1">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface font-serif tracking-tight leading-none">
+        The Great Barred Spiral in Fornax
+      </h1>
+<p class="font-label-md text-label-md text-primary tracking-wider uppercase">
+        FORNAX CLUSTER // DISTANCE ~56 MILLION LY
+      </p>
+</div>
+<!-- Hairline Separator -->
+<div class="w-full h-px bg-outline-variant/60 my-1"></div>
+<!-- Monospace Section Header -->
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">
+        OBSERVATIONAL NOTE // EXPLANATION
+      </span>
+<span class="font-label-sm text-label-sm text-outline uppercase">VOL. XLII</span>
+</div>
+<!-- Body Copy Preview with In-Place Expansion -->
+<div class="space-y-3">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+        Spanning approximately 200,000 light-years across, NGC 1365 is an enormous barred spiral galaxy lying within the southern constellation Fornax. Majestic dust lanes sweep through a prominent central stellar bar, funneling raw interstellar gas straight into the galactic core where a supermassive black hole spins at nearly the theoretical limit of relativity.
+      </p>
+<!-- Expandable Drawer Content -->
+<div class="hidden flex-col space-y-3 pt-1 border-t border-outline-variant/30" id="full-log-panel">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          High-energy X-ray observations and infrared spectroscopy suggest violent star formation rings lining the bar's inner orbital resonance. The colossal gravity of the bar produces turbulent gas shocks, sparking clusters of brilliant, sapphire-hot young stellar systems along its serpentine spiral ribbons.
+        </p>
+<div class="p-3 bg-surface-container-low border border-outline-variant/50 space-y-1.5">
+<div class="font-label-sm text-label-sm text-primary tracking-wider uppercase font-semibold">COGNITIVE LOG METRICS</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<div>APPARENT MAG: +10.3</div>
+<div>ANGULAR SIZE: 12′ × 6.6′</div>
+<div>RADIAL VEL: 1636 km/s</div>
+<div>CREDIT: NASA, ESA, CSA, JWST</div>
+</div>
+</div>
+</div>
+<!-- Action: In-Place Unroll Button -->
+<button class="w-full py-2.5 px-3 bg-surface-container-low hover:bg-surface-container border border-primary/40 active:border-primary text-primary flex items-center justify-between transition-colors" id="unroll-btn" onclick="toggleLogUnroll()" type="button">
+<span class="font-label-md text-label-md uppercase font-bold tracking-widest" id="unroll-text">
+          [ + UNROLL FULL LOG RECORD ]
+        </span>
+<span class="material-symbols-outlined text-[16px]" id="unroll-glyph">expand_more</span>
+</button>
+</div>
+<!-- Instrument Status Simulator / Mode Switcher -->
+<div class="pt-2">
+<div class="bg-surface-container-lowest p-3 border border-outline-variant/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">TELESCOPE COUPLER STATE</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-0.5 font-label-sm text-label-sm bg-secondary-container text-on-secondary-container uppercase border border-secondary/50" id="mode-nominal-btn" onclick="setTelemetryMode('nominal')" type="button">
+              LIVE
+            </button>
+<button class="px-2 py-0.5 font-label-sm text-label-sm bg-surface-container text-on-surface-variant uppercase border border-outline-variant/50" id="mode-recal-btn" onclick="setTelemetryMode('recal')" type="button">
+              STREAM
+            </button>
+<button class="px-2 py-0.5 font-label-sm text-label-sm bg-surface-container text-on-surface-variant uppercase border border-outline-variant/50" id="mode-scotopic-btn" onclick="setTelemetryMode('scotopic')" type="button">
+              CALIB
+            </button>
+</div>
+</div>
+<!-- Reactive Signal Status Indicator Strip -->
+<div class="flex items-center justify-between px-2 py-1.5 bg-surface-container-low border border-outline-variant/30 text-on-surface" id="telemetry-status-banner">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary" id="telemetry-dot"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider" id="telemetry-msg">
+              LINK NOMINAL // DOWNLINK LATENCY 42ms
+            </span>
+</div>
+<span class="font-label-sm text-label-sm text-outline" id="telemetry-code">ST-09</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Instrument Bar / Vernier Coordinates Strip -->
+<div class="w-full bg-surface-container-lowest border-t border-outline-variant/60 px-margin py-3 flex flex-col space-y-2 mb-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">my_location</span>
+<span class="font-label-sm text-label-sm text-on-surface tracking-wider uppercase">
+          RA 03h 33m 36s | Dec -36° 08′ 25″
+        </span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase">EPOCH J2000.0</span>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/30">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">inventory_2</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">
+          [ SYNCED TO LOCAL ARCHIVE ]
+        </span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-widest uppercase">
+        APOD // TODAY
+      </span>
+</div>
+</div>
+</div>
+<script>
+  let isFavorited = false;
+  let isUnrolled = false;
+
+  function toggleFavorite() {
+    isFavorited = !isFavorited;
+    const btn = document.getElementById('fav-btn');
+    const icon = document.getElementById('fav-icon');
+    const label = document.getElementById('fav-label');
+
+    if (isFavorited) {
+      btn.classList.add('bg-primary-container', 'border-primary');
+      btn.classList.remove('bg-surface-container-low', 'border-outline-variant');
+      icon.textContent = 'star';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      icon.classList.remove('text-primary');
+      icon.classList.add('text-on-primary-container');
+      label.classList.remove('text-primary');
+      label.classList.add('text-on-primary-container');
+      label.textContent = 'LOGGED ✦';
+    } else {
+      btn.classList.remove('bg-primary-container', 'border-primary');
+      btn.classList.add('bg-surface-container-low', 'border-outline-variant');
+      icon.textContent = 'star_outline';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      icon.classList.add('text-primary');
+      icon.classList.remove('text-on-primary-container');
+      label.classList.add('text-primary');
+      label.classList.remove('text-on-primary-container');
+      label.textContent = 'FAV // 01';
+    }
+  }
+
+  function toggleLogUnroll() {
+    isUnrolled = !isUnrolled;
+    const panel = document.getElementById('full-log-panel');
+    const label = document.getElementById('unroll-text');
+    const glyph = document.getElementById('unroll-glyph');
+
+    if (isUnrolled) {
+      panel.classList.remove('hidden');
+      panel.classList.add('flex');
+      label.textContent = '[ - COLLAPSE LOG RECORD ]';
+      glyph.textContent = 'expand_less';
+    } else {
+      panel.classList.add('hidden');
+      panel.classList.remove('flex');
+      label.textContent = '[ + UNROLL FULL LOG RECORD ]';
+      glyph.textContent = 'expand_more';
+    }
+  }
+
+  function setTelemetryMode(mode) {
+    const banner = document.getElementById('telemetry-status-banner');
+    const dot = document.getElementById('telemetry-dot');
+    const msg = document.getElementById('telemetry-msg');
+    const code = document.getElementById('telemetry-code');
+
+    const liveBtn = document.getElementById('mode-nominal-btn');
+    const streamBtn = document.getElementById('mode-recal-btn');
+    const calibBtn = document.getElementById('mode-scotopic-btn');
+
+    // Reset button appearances
+    [liveBtn, streamBtn, calibBtn].forEach(b => {
+      b.className = 'px-2 py-0.5 font-label-sm text-label-sm bg-surface-container text-on-surface-variant uppercase border border-outline-variant/50';
+    });
+
+    if (mode === 'nominal') {
+      liveBtn.className = 'px-2 py-0.5 font-label-sm text-label-sm bg-secondary-container text-on-secondary-container uppercase border border-secondary/50';
+      dot.className = 'w-2 h-2 rounded-full bg-secondary';
+      msg.textContent = 'LINK NOMINAL // DOWNLINK LATENCY 42ms';
+      msg.className = 'font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider';
+      code.textContent = 'ST-01';
+    } else if (mode === 'recal') {
+      streamBtn.className = 'px-2 py-0.5 font-label-sm text-label-sm bg-primary-container text-on-primary-container uppercase border border-primary';
+      dot.className = 'w-2 h-2 rounded-full bg-primary animate-ping';
+      msg.textContent = 'INK-LINE STREAMING // RECV PACKET #9902';
+      msg.className = 'font-label-sm text-label-sm text-primary uppercase tracking-wider';
+      code.textContent = 'RX-77';
+    } else if (mode === 'scotopic') {
+      calibBtn.className = 'px-2 py-0.5 font-label-sm text-label-sm bg-surface-bright text-on-surface uppercase border border-outline';
+      dot.className = 'w-2 h-2 rounded-full bg-tertiary';
+      msg.textContent = 'OPTICAL CALIBRATION // ZERO NOISE FIELD';
+      msg.className = 'font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider';
+      code.textContent = 'CB-00';
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.7)]" data-active-classes="text-primary border-t-2 border-primary bg-surface-container-low"><div class="h-14 grid grid-cols-4"><a aria-current="page" class="flex flex-col items-center justify-center h-full px-space-xs transition-colors text-primary border-t-2 border-primary bg-surface-container-low" data-path="today" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">wb_twilight</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[TODAY]</span></a><a class="flex flex-col items-center justify-center h-full px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="log-detail" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">menu_book</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[LOG / DETAIL]</span></a><a class="flex flex-col items-center justify-center h-full px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="favorites" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">star_rate</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[FAVORITES]</span></a><a class="flex flex-col items-center justify-center h-full px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="account-access" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">tune</span><span class="font-label-sm text-label-sm tracking-widest uppercase">[ACCESS]</span></a></div></nav></body></html>
